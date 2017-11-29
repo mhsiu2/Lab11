@@ -29,7 +29,21 @@ public class Sorting {
      * @return the sorted array, or null on failure
      */
     static int[] bubbleSort(final int[] array) {
-        return null;
+        if (array.length == 0) {
+            return null;
+        }
+        int[] sortedArray = array;
+        int sub;
+        for (int i = 1; i <= array.length - 1; i++) {
+            for (int j = 1; j < array.length; j++) {
+                if (sortedArray[j] < sortedArray[j - 1]) {
+                    sub = sortedArray[j];
+                    sortedArray[j] = sortedArray[j - 1];
+                    sortedArray[j - 1] = sub;
+                }
+            }
+        }
+        return sortedArray;
     }
 
     /**
